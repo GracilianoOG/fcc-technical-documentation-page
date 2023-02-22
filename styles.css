@@ -1,0 +1,228 @@
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-navbar-background: #333639;
+  --color-content-background: #2E3236;
+  --color-title: #FAFAFA;
+  --color-text: #FAFAFA;
+  --color-navbar-borders: gray;
+  --color-navbar-hover: #E0E0E11A;
+  --color-top-header: #EE7381;
+  --color-code: #EE7381;
+  --color-code-block: #3C3E3F;
+  --color-code-inline: #2B2B2B;
+  --color-title-line: rgba(255,255,255,.5);
+  --color-link: #EE7381;
+  --font-navbar-header: "Trebuchet MS", sans-serif;
+  --font-text: "Arial", sans-serif;
+  --font-code-inline: "Courier New", monospace;
+  --font-code-block: "Trebuchet MS", sans-serif;
+  --width-navbar: 18.75rem;
+}
+
+#menu {
+  height: 0px;
+  opacity: 0;
+  position: fixed;
+  width: 0px;
+  z-index: -1;
+}
+
+#menu:checked ~ #navbar {
+  /* display: block; */
+  left: 0;
+  opacity: .95;
+}
+
+#label-menu {
+  --menu-size: 1rem;
+  --menu-position: 1rem;
+  cursor: pointer;
+  display: block;
+  height: var(--menu-size);
+  position: fixed;
+  right: var(--menu-position);
+  top: var(--menu-position);
+  width: var(--menu-size);
+  z-index: 1;
+}
+
+body {
+  font-family: var(--font-text);
+}
+
+header {
+  color: var(--color-title);
+  font-weight: 700;
+}
+
+#navbar {
+  background-color: var(--color-navbar-background);
+  /* display: none; */
+  left: -100%;
+  min-height: 100%;
+  min-width: 100%;
+  opacity: 0;
+  position: fixed;
+  text-align: left;
+  transition: left .25s, opacity .25s;
+}
+
+#navbar ul {
+  max-height: calc(100vh - 4.25rem);
+  overflow-y: auto;
+}
+
+#navbar header h1 {
+  color: var(--color-top-header);
+  font-size: 2rem;
+  font-family: var(--font-navbar-header);
+  letter-spacing: .125rem;
+  padding: 1rem;
+  text-transform: uppercase;
+}
+
+#navbar li {
+  border-top: 1px solid var(--color-navbar-borders);
+  list-style: none;
+}
+
+#navbar a {
+  border-left: 0 solid var(--color-top-header);
+  color: var(--color-text);
+  display: block;
+  padding: 1rem;
+  text-decoration: none;
+  transition: padding-left .25s ease-out, border-left-width .25s;
+}
+
+#navbar a:focus,
+#navbar a:hover {
+  background-color: var(--color-navbar-hover);
+  border-left-width: 1rem;
+  padding-left: 1.5rem;
+}
+
+#main-doc {
+  background-color: var(--color-content-background);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+#main-doc article {
+  color: var(--color-text);
+}
+
+.main-section header, h3 {
+  padding-bottom: 1rem;
+}
+
+.main-section header h2 {
+  font-size: 2rem;
+}
+
+.main-section h3 {
+  font-size: 1.5rem;
+}
+
+.main-section h3:not(:first-child) {
+  padding-top: 1rem;
+}
+
+.main-section header::after {
+  content: "";
+  display: block;
+  height: 2px;
+  background-color: var(--color-title-line);
+  border-radius: 50%;
+}
+
+.main-section p {
+  font-size: 1rem;
+  line-height: 1.4;
+  margin: 0 0 1rem;
+  text-align: justify;
+}
+
+.main-section a {
+  color: var(--color-link);
+}
+
+.code-inline {
+  background-color: var(--color-code-inline);
+  color: var(--color-code);
+  font-family: var(--font-code-inline);
+  padding: 0 5px;
+}
+
+.code-block {
+  background-color: var(--color-code-block);
+  border-radius: .25rem;
+  display: block;
+  font-family: var(--font-code-block);
+  line-height: 1.75;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  white-space: pre-line;
+  word-wrap: break-word;
+}
+
+.main-section li {
+  list-style-position: inside;
+  margin-left: 1rem;
+}
+
+.main-section li:not(:first-child) {
+  margin-top: 1rem;
+}
+
+.main-section li::marker {
+  color: var(--color-code);
+}
+
+@media screen and (min-width: 36rem) {
+  #main-doc {
+    padding: 2rem;
+  }
+
+  .main-section p {
+    margin: 0 1rem 1rem;
+  }
+
+  .code-block {
+    margin: 0 2rem 1rem;
+  }
+
+  .main-section li {
+    margin-left: 2.5rem;
+  }
+}
+
+@media screen and (min-width: 48rem) {
+  #menu {
+    display: none;
+  }
+
+  #label-menu {
+    display: none;
+  }
+
+  #navbar {
+    /* display: block; */
+    border-right: 2px solid var(--color-navbar-borders);
+    left: 0;
+    min-width: var(--width-navbar);
+    opacity: 1;
+    transition: none;
+  }
+
+  #main-doc {
+    margin-left: var(--width-navbar);
+  }
+}

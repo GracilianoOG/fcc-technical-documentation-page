@@ -1,0 +1,177 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Documentation Page</title>
+  </head>
+  <body>
+    <input id="menu" type="checkbox">
+    <label id="label-menu" for="menu">⚙️</label>
+    <nav id="navbar">
+      <header><h1>JavaScript</h1></header>
+      <ul>
+        <li><a href="#introduction" class="nav-link">Introduction</a></li>
+        <li><a href="#comments" class="nav-link">Comments</a></li>
+        <li><a href="#variables" class="nav-link">Variables</a></li>
+        <li><a href="#operators" class="nav-link">Operators</a></li>
+        <li><a href="#data_types" class="nav-link">Data Types</a></li>
+        <li><a href="#references" class="nav-link">References</a></li>
+    </nav>
+    <main id="main-doc">
+      <section id="introduction" class="main-section">
+        <header><h2>Introduction</h2></header>
+        <article>
+          <h3>JavaScript Can Change HTML Content</h3>
+          <p>One of many JavaScript HTML methods is <code class="code-inline">getElementById()</code>.</p>
+          <p>The example below "finds" an HTML element (with id="demo"), and changes the element content (innerHTML) to "Hello JavaScript":</p>
+          <code class="code-block">document.getElementById("demo").innerHTML = "Hello JavaScript";</code>
+          <p>JavaScript accepts both double and single quotes:</p>
+          <code class="code-block">document.getElementById('demo').innerHTML = 'Hello JavaScript';</code>
+          <h3>JavaScript Can Change HTML Styles (CSS)</h3>
+          <p>Changing the style of an HTML element, is a variant of changing an HTML attribute:</p>
+          <code class="code-block">document.getElementById("demo").style.fontSize = "35px";</code>
+          <h3>JavaScript Can Hide HTML Elements</h3>
+          <p>Hiding HTML elements can be done by changing the <code class="code-inline">display</code> style:</p>
+          <code class="code-block">document.getElementById("demo").style.display = "none";</code>
+          <h3>JavaScript Can Show HTML Elements</h3>
+          <p>Showing hidden HTML elements can also be done by changing the <code class="code-inline">display</code> style:</p>
+          <code class="code-block">document.getElementById("demo").style.display = "block";</code>
+        </article>
+      </section>
+      <section id="comments" class="main-section">
+        <header><h2>Comments</h2></header>
+        <article>
+          <h3>Single Line Comments</h3>
+          <p>Single line comments start with <code class="code-inline">//</code>.</p>
+          <p>Any text between <code class="code-inline">//</code> and the end of the line will be ignored by JavaScript (will not be executed).</p>
+          <p>This example uses a single-line comment before each code line:</p>
+          <code class="code-block">// Change heading:
+document.getElementById("myH").innerHTML = "My First Page";
+
+// Change paragraph:
+document.getElementById("myP").innerHTML = "My first paragraph.";</code>
+          <p>This example uses a single line comment at the end of each line to explain the code:</p>
+          <code class="code-block"> let x = 5;      // Declare x, give it the value of 5
+let y = x + 2;  // Declare y, give it the value of x + 2 </code>
+          <h3>Multi-Line Comments</h3>
+          <p>Multi-line comments start with <code class="code-inline">/*</code> and end with <code class="code-inline">*/</code>.</p>
+          <p>Any text between <code class="code-inline">/*</code> and <code class="code-inline">*/</code> will be ignored by JavaScript.</p>
+          <p>This example uses a multi-line comment (a comment block) to explain the code:</p>
+          <code class="code-block">/*
+The code below will change
+the heading with id = "myH"
+and the paragraph with id = "myP"
+in my web page:
+*/
+document.getElementById("myH").innerHTML = "My First Page";
+document.getElementById("myP").innerHTML = "My first paragraph.";</code>
+        </article>
+      </section>
+      <section id="variables" class="main-section">
+        <header><h2>Variables</h2></header>
+        <article>
+          <h3>4 Ways to Declare a JavaScript Variable:</h3>
+          <ul>
+            <li>Using <code class="code-inline">var</code></li>
+            <li>Using <code class="code-inline">let</code></li>
+            <li>Using <code class="code-inline">const</code></li>
+            <li>Using nothing</li>
+          </ul>
+          <h3>What are Variables?</h3>
+          <p>Variables are containers for storing data (storing data values).</p>
+          <p>In this example, <code class="code-inline">x</code>, <code class="code-inline">y</code>, and <code class="code-inline">z</code>, are variables, declared with the <code class="code-inline">var</code> keyword:</p>
+          <code class="code-block">var x = 5;
+var y = 6;
+var z = x + y;</code>
+          <p>In this example, <code class="code-inline">x</code>, <code class="code-inline">y</code>, and <code class="code-inline">z</code>, are variables, declared with the <code class="code-inline">let</code> keyword:</p>
+          <code class="code-block">let x = 5;
+let y = 6;
+let z = x + y;</code>
+          <p>In this example, <code class="code-inline">x</code>, <code class="code-inline">y</code>, and <code class="code-inline">z</code>, are undeclared variables:</p>
+          <code class="code-block">x = 5;
+y = 6;
+z = x + y;</code>
+          <p>From all the examples above, you can guess:</p>
+          <ul>
+            <li>x stores the value 5</li>
+            <li>y stores the value 6</li>
+            <li>z stores the value 11</li>
+          </ul>
+        </article>
+      </section>
+      <section id="operators" class="main-section">
+        <header><h2>Operators</h2></header>
+        <article>
+          <p>The <strong>Assignment Operator</strong> (<code class="code-inline">=</code>) assigns a value to a variable.</p>
+          <code class="code-block">// Assign the value 5 to x
+let x = 5;
+// Assign the value 2 to y
+let y = 2;
+// Assign the value x + y to z:
+let z = x + y;</code>
+          <p>The <strong>Addition Operator</strong> (<code class="code-inline">+</code>) adds numbers:</p>
+          <code class="code-block">let x = 5;
+let y = 2;
+let z = x + y;</code>
+          <p>The <strong>Multiplication Operator</strong> (<code class="code-inline">*</code>) multiplies numbers.</p>
+          <code class="code-block">let x = 5;
+let y = 2;
+let z = x * y;</code>
+          <p>Read more about <a href="https://www.w3schools.com/js/js_operators.asp">JavaScript Operators</a>.</p>
+        </article>
+      </section>
+      <section id="data_types" class="main-section">
+        <header><h2>Data Types</h2></header>
+        <article>
+          <h3>JavaScript has 8 Datatypes</h3>
+          <ol>
+            <li>String</li>
+            <li>Number</li>
+            <li>Bigint</li>
+            <li>Boolean</li>
+            <li>Undefined</li>
+            <li>Null</li>
+            <li>Symbol</li>
+            <li>Object</li>
+          </ol>
+          <h3>The Object Datatype</h3>
+          <p>The object data type can contain:</p>
+          <ol>
+            <li>An object</li>
+            <li>An array</li>
+            <li>A date </li>
+          </ol>
+          <h3>Examples</h3>
+          <code class="code-block">// Numbers:
+let length = 16;
+let weight = 7.5;
+
+// Strings:
+let color = "Yellow";
+let lastName = "Johnson";
+
+// Booleans
+let x = true;
+let y = false;
+
+// Object:
+const person = {firstName:"John", lastName:"Doe"};
+
+// Array object:
+const cars = ["Saab", "Volvo", "BMW"];
+
+// Date object:
+const date = new Date("2022-03-25");</code>
+        <p>A JavaScript variable can hold any type of data.</p>
+        </article>
+      </section>
+      <section id="references" class="main-section">
+        <header><h2>References</h2></header>
+        <article>
+          <p>The references and examples are taken from <a href="https://www.w3schools.com/js/default.asp">W3Schools</a>.</p>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
